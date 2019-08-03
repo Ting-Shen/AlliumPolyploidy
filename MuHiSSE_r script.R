@@ -19,7 +19,7 @@ library(phytools)
 mytree <- read.tree("mytree.tre")
 mytrait <- read.csv("mytrait.csv")
 
-# make a new datframe of the states and then convert the first column to characters rather than factors (Harrington & Reeder, 2017)
+# make a new dateframe of the states and then convert the first column to characters rather than factors (Harrington & Reeder, 2017)
 
 statesALL<-mytrait
 statesALL[,1]<-as.character(mytrait[,1])
@@ -200,7 +200,7 @@ MuH.nodual.CID8 <- MuHiSSE(phy=phy, data=states, f=sampfrac, turnover=c(rep(1,4)
 recon_list<-list(MuL.qPD0, Mul.nodual.full01, Mul.nodual.full02, MuH.nodual.full01, MuH.nodual.full02, Mul.full01, Mul.full02, MuH.full01, MuH.full02, MuH.qPD0, MuH.CID2, MuH.CID3, MuH.CID4, MuH.CID5, MuH.CID6, MuH.CID7, MuH.CID8, MuH.nodual.CID2, MuH.nodual.CID4, MuH.nodual.CID8)
 recon_list
 
-# Adaptive Sampling of the Likelihood Surface under the best fitted MuHiSSE
+# Adaptive Sampling of the Likelihood Surface under the best fitted MuHiSSE (e.g., MuH.full01)
 
 MuH.full01.CI <- SupportRegionMuHiSSE(muhisse.obj = MuH.full01, n.points = 10000)
 write.csv(MuH.full01$all.points, "MuHiSSE_MuH.full01.CI.csv")
