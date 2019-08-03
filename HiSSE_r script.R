@@ -19,7 +19,7 @@ library(phytools)
 mytree <- read.tree("mytree.tre")
 mytrait <- read.csv("mytrait.csv")
 
-# make a new datframe of the states and then convert the first column to characters rather than factors (Harrington & Reeder, 2017)
+# make a new dateframe of the states and then convert the first column to characters rather than factors (Harrington & Reeder, 2017)
 
 statesALL<-mytrait
 statesALL[,1]<-as.character(mytrait[,1])
@@ -323,7 +323,7 @@ recon_list<-list(BiSSE_BD_states, null.4_9.rate_states, null.4_3.rate_states, Bi
 plot.hisse.states(H.nodual.qPD0.states, rate.param = "net.div", show.tip.label = FALSE, rate.colors=c("white", "red"), state.colors = c("yellow","orange"))
 
 
-# Obtain an estimate of the confidence intervals for HiSSE model (H.nodual) using adaptive sampling points
+# Obtain an estimate of the confidence intervals for HiSSE model (e.g., H.nodual) using adaptive sampling points
 
 H.nodual.CI <- SupportRegion(hisse.obj = H.nodual, n.points = 10000, output.type = "raw")
 write.csv(H.nodual.CI$all.points, "HiSSE_H.nodual.CI.csv")
